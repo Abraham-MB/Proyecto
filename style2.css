@@ -154,6 +154,10 @@ h1{
   border-left: 5px solid greenyellow;
   padding-left: 5px;
   margin: 0;
+  transform: translate(50px, 0);
+}
+.text-1{
+  font-size: 30px;
 }
 
 
@@ -165,6 +169,13 @@ body {
   color: white;
   padding: 20px;
 }
+
+.card-body {
+  padding-left: 0;
+  padding-right: 0;
+  justify-content: center;
+}
+
 
 .catalog-wrapper {
   position: relative;
@@ -307,11 +318,7 @@ body {
 .tarjetas2{
   background-color: #202122;
   margin: 20px;
-  border-radius: 20px;
   border-bottom: 2px solid greenyellow;
-  border-top: 2px solid greenyellow;
-  border-left: 2px solid greenyellow;
-  border-right: 2px solid greenyellow;
 }
 
 
@@ -338,8 +345,38 @@ body {
   margin: 5px;
   color: white;
   background-color: #35373a;
+  border-bottom: 2px solid rgba(172, 255, 47, 0.185);
+  border-top: 2px solid rgba(172, 255, 47, 0.185);
+  border-left: 2px solid rgba(172, 255, 47, 0.185);
+  border-right: 2px solid rgba(172, 255, 47, 0.185);
+  
 }
 .btn-t2-2:hover{
   color: white;
+}
+
+
+/*textos*/
+
+
+
+/*tarjetas 3*/
+
+.div3{
+  display: flex;
+  justify-content: center;
+}
+
+.img-tar3{
+  border-radius: 10px;
+  height: 350px;
+  width: 100%;
+  
+}
+
+.tarjetas3{
+  background-color: #202122;
+  margin: 20px;
+  border-radius: 50px;
 }
 
