@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('image/RgJ8zumZvL1JFkDWpD63o_5R.jpg'); /* Ruta de la imagen */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    box-sizing: border-box;
+  }
+  
+  .container {
+    background-color: rgba(203, 197, 197, 0.7); /* Fondo oscuro semi-transparente */
+    padding: 50px;
+    border-radius: 20px;
+    border-width: 50%;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    width: 300px;
+    text-align: center;
+    
+    /* Desenfoque del fondo */
+    backdrop-filter: blur(2px); /* Aplica el desenfoque */
+    -webkit-backdrop-filter: blur(8px); /* Para Safari */
+  }
+  
+  h1 {
+    color: #ba1010;
+    margin-top: 5px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 5px;
+    border-bottom: 3px solid rgb(2, 2, 2);
+    background: transparent;
+    color: rgb(0, 0, 0);
+  }
+  
+  input[type="password"]::-ms-reveal,
+  input[type="password"]::-ms-clear,
+  input[type="password"]::-webkit-credentials-auto-fill-button,
+  input[type="password"]::-webkit-inner-spin-button,
+  input[type="password"]::-webkit-outer-spin-button {
+    display: none !important;
+  }
+  
+  input[type="submit"],
+  button {
+    width: 70%;
+    padding: 10px;
+    background-color: #000000;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    border-bottom: 3px solid rgb(0, 0, 0);
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  input[type="submit"]:hover,
+  button:hover {
+    background-color: #2a2637;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+  .volver{
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+    padding: 5px;
+    border-radius: 5px;
+    width: 80px;
+    margin-top: 25PX;
+    margin-left: 220px;
+    text-align: center;
+    
+    
+    
+  }
+  

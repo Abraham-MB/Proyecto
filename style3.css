@@ -1,0 +1,167 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1e2126;
+  color: white;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.catalog-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: white;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: #1e2126;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  aspect-ratio: 16 / 9;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border: 2px solid #9cce04;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.carousel-item.active {
+  opacity: 20;
+}
+
+.game-image {
+  flex: 0 0 65%;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.game-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.game-info {
+  flex: 0 0 35%;
+  padding: 20px;
+  background-color: #2a2e35;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.game-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.game-price {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-cart {
+  background-color: #9cce04;
+  color: #1e2126;
+}
+
+.btn-wishlist {
+  background-color: #3a3f48;
+  color: white;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-prev {
+  left: 10px;
+}
+
+.carousel-next {
+  right: 10px;
+}
+
+.carousel-thumbnails {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 50px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail.active {
+  border-color: #9cce04;
+}

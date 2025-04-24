@@ -1,0 +1,345 @@
+.div1{
+  width: 70%;
+}
+.header {
+  background-color: #1e2126;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+.header h1 {
+  margin: 0;
+  color: #9cce04;
+  font-size: 2.5rem;
+}
+
+.header .slogan {
+  color: #ddd;
+  font-size: 1rem;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  color: #9cce04;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-cart {
+  background-color: #9cce04;
+  color: #1e2126;
+}
+
+.btn-wishlist {
+  background-color: #3a3f48;
+  color: white;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-prev {
+  left: 10px;
+}
+
+.carousel-next {
+  right: 10px;
+}
+
+.carousel-thumbnails {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 50px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail.active {
+  border-color: #9cce04;
+}
+.texto{
+    margin: 0%;
+    font-family: 'Courier New', Courier, monospace;
+    border-bottom: 2px solid rgb(66, 85, 38);
+}
+
+.color{
+    color: yellowgreen;
+    cursor: pointer;   
+}
+h1{
+    color: yellowgreen;
+}
+
+
+.style{
+  padding: 0;
+  margin: 0;
+}
+.search{
+  height: 35px;
+  margin:0;
+  background-color: rgba(0,0, 0, 0);
+  color: rgb(0, 0, 0);
+  border-bottom: 0.1px solid rgb(14, 255, 6);
+  border-top: 2px solid black;
+  border-left: 2px solid black ;
+  border-right: 2px solid black;
+}
+.search2{
+  height: 35px;
+  margin:0;
+}
+
+.car:hover{
+  background-color: rgb(0, 0, 0);
+}
+
+.text{
+  border-left: 5px solid greenyellow;
+  padding-left: 5px;
+  margin: 0;
+}
+
+
+
+
+/*catalogo*/
+body {
+  background-color: #1e2126;
+  color: white;
+  padding: 20px;
+}
+
+.catalog-wrapper {
+  position: relative;
+  padding: 20px 50px;
+  margin-bottom: 20px;
+}
+
+.catalog-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 10px 0;
+  transition: transform 0.5s ease;
+}
+
+.game-card {
+  background-color: #2a2e35;
+  border: 2px solid #9cce04;
+  width: 280px;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+}
+
+.catalog-title {
+  color: #9cce04;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.card-img-container {
+  height: 150px;
+  overflow: hidden;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-title {
+  color: #9cce04;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+.card-text {
+  color: white;
+  font-size: 1.1rem;
+}
+
+.btn-cart {
+  background-color: #9cce04;
+  color: #1e2126;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.btn-wishlist {
+  background-color: #3a3f48;
+  color: white;
+  border: none;
+  font-size: 0.9rem;
+}
+
+/* Estilos para los botones de navegación */
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #9cce04;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: rgba(156, 206, 4, 0.3);
+  color: white;
+}
+
+.prev-button {
+  left: 5px;
+}
+
+.next-button {
+  right: 5px;
+}
+
+/* Estilos para la barra de navegación inferior */
+.catalog-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 8px;
+  background-color: rgba(42, 46, 53, 0.6);
+  padding: 10px;
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+}
+
+.catalog-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.catalog-indicator.active {
+  background-color: #9cce04;
+  transform: scale(1.2);
+}
+
+
+/*tarjetas 2*/
+.tarjetas2{
+  background-color: #202122;
+  margin: 20px;
+  border-radius: 20px;
+  border-bottom: 2px solid greenyellow;
+  border-top: 2px solid greenyellow;
+  border-left: 2px solid greenyellow;
+  border-right: 2px solid greenyellow;
+}
+
+
+/*imagenes de las tarjetas 2*/
+.img-tar2{
+  border-radius: 20px;
+  height: 150px;
+}
+
+/*botones tarejtas 2*/
+.btn-t2{
+  width: 100%;
+  height: 40px;
+  margin: 5px;
+}
+.btn-t2:hover{
+  color: white;
+  background-color: #1e2126;
+}
+
+.btn-t2-2{
+  width: 100%;
+  height: 40px;
+  margin: 5px;
+  color: white;
+  background-color: #35373a;
+}
+.btn-t2-2:hover{
+  color: white;
+}
+
