@@ -61,57 +61,8 @@
   color: white;
 }
 
-.carousel-control {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 10;
-}
 
-.carousel-prev {
-  left: 10px;
-}
 
-.carousel-next {
-  right: 10px;
-}
-
-.carousel-thumbnails {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  gap: 10px;
-}
-
-.thumbnail {
-  width: 80px;
-  height: 50px;
-  border: 2px solid transparent;
-  border-radius: 5px;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.thumbnail img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.thumbnail.active {
-  border-color: #9cce04;
-}
 .texto{
     margin: 0%;
     font-family: 'Courier New', Courier, monospace;
@@ -127,10 +78,7 @@ h1{
 }
 
 
-.style{
-  padding: 0;
-  margin: 0;
-}
+/*Buscador*/
 .search{
   height: 35px;
   margin:0;
@@ -141,10 +89,14 @@ h1{
   border-left: 2px solid black ;
   border-right: 2px solid black;
 }
+
+/*logo del buscador*/
 .search2{
   height: 35px;
   margin:0;
 }
+
+
 
 .car:hover{
   background-color: rgb(0, 0, 0);
@@ -290,31 +242,6 @@ body {
   right: 5px;
 }
 
-/* Estilos para la barra de navegación inferior */
-/*.catalog-indicators {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  gap: 8px;
-  background-color: rgba(144, 147, 153, 0.6);
-  padding: 10px;
-  border-radius: 20px;
-  backdrop-filter: blur(5px);
-}
-
-.catalog-indicator {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.4);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.catalog-indicator.active {
-  background-color: #9cce04;
-  transform: scale(1.2);
-}*/
 
 
 /*tarjetas 2*/
