@@ -338,6 +338,30 @@ body {
   object-fit: cover; /* ajusta la imagen al contenedor sin deformarla */
 }
 
+/*sombras de los botones del carrucel*/
+
+/* Mantén los controles estándar para el primer carrusel */
+#carouselExampleRide .carousel-control-prev,
+#carouselExampleRide .carousel-control-next {
+  /* Puedes dejar esto vacío o añadir estilos mínimos que no interfieran */
+  width: auto;
+  height: auto;
+  background-color: transparent;
+}
+
+/* Estilos específicos solo para el segundo carrusel */
+#carouselExampleFade .carousel-control-prev, 
+#carouselExampleFade .carousel-control-next {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 60px;
+  height: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 200px;
+  overflow: hidden;
+}
+
+
 
 /*carrucel 1*/
 .carrucel-1 {
@@ -350,5 +374,3 @@ body {
   height: 100%;
   object-fit: cover; /* ajusta la imagen al contenedor sin deformarla */
 }
-
-
