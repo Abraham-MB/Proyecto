@@ -1,68 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <title>Carousel/Slideshow</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Juegos</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .catalog-container {
+      width: 300px;
+      background-color: #1e2126;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+      text-align: center;
+    }
+
+    .catalog-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .catalog-img:hover {
+      transform: scale(1.05);
+    }
+
+    .catalog-body {
+      padding: 15px;
+    }
+
+    .catalog-title {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: yellowgreen;
+    }
+
+    .catalog-price {
+      margin-bottom: 15px;
+      color: #ccc;
+    }
+
+    .catalog-buttons button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      margin-top: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .btn-cart {
+      background-color: #9cce04;
+      color: #1e2126;
+    }
+
+    .btn-wishlist {
+      background-color: #3a3f48;
+      color: white;
+    }
+
+    .nav-controls {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .nav-controls button {
+      background-color: transparent;
+      border: 2px solid yellowgreen;
+      color: yellowgreen;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .nav-controls button:hover {
+      background-color: yellowgreen;
+      color: #1e2126;
+    }
+  </style>
 </head>
-
 <body>
-
-  <div class="container">
-    <br>
-    <div id="theCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicadores -->
-      <ol class="carousel-indicators">
-        <li data-target="#theCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#theCarousel" data-slide-to="1"></li>
-        <li data-target="#theCarousel" data-slide-to="2"></li>
-        <li data-target="#theCarousel" data-slide-to="3"></li>
-
-      </ol>
-
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <img src="http://www.bcu.ac.uk/mediaitem/visual-communication-illustration-02-130585258441045504.jpg?quality=90" alt="Ilustracion">
-          <div class="carousel-caption d-none d-md-block">
-            <h3>Gusti Ilustración</h3>
-            <p>Exposición</p>
-          </div>
+  <div>
+    <div class="catalog-container" id="catalogCard">
+      <img src="war thunder (1).jpg" alt="Juego" class="catalog-img" id="catalogImage">
+      <div class="catalog-body">
+        <h3 class="catalog-title" id="catalogTitle">Call of Duty: Modern Warfare</h3>
+        <p class="catalog-price" id="catalogPrice">Precio: $39.99</p>
+        <div class="catalog-buttons">
+          <button class="btn-cart">Añadir al carrito</button>
+          <button class="btn-wishlist">Lista de deseos</button>
         </div>
-
-        <div class="item">
-          <img src="https://ugc.kn3.net/i/origin/http://thisiscolossal.com/wp-content/uploads/2011/02/anthony-2-600x424.jpg" alt="fotografia" width="600" height="424">
-          <div class="carousel-caption d-none d-md-block">
-            <h3> Xataka Fotografía</h3>
-            <p>Concurso</p>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/e86e8b59124321.5a15e4ccd8622.jpg" alt="pintura" width="600" height="424">
-          <div class="carousel-caption d-none d-md-block">
-            <h3>DoArt Pintura</h3>
-            <p>Curso</p>
-          </div>
-        </div>
-        <div class="item">
-          <img src="https://cdn.dribbble.com/users/324248/screenshots/3978513/planet2_800.jpg" alt="diseno" width="600" height="424">
-          <div class="carousel-caption d-none d-md-block">
-            <h3>UX UI Diseño Gráfico</h3>
-            <p>Curso</p>
-          </div>
-        </div>
-
-        <a class="left carousel-control" href="#theCarousel" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">anterior</span>
-        </a>
-        <a class="right carousel-control" href="#theCarousel" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">siguiente</span>
-        </a>
       </div>
     </div>
 
+    <div class="nav-controls">
+      <button onclick="prevGame()">←</button>
+      <button onclick="nextGame()">→</button>
+    </div>
+  </div>
+
+  <script>
+    const games = [
+      { title: "Call of Duty: Modern Warfare", price: "$39.99", img: "war thunder (1).jpg" },
+      { title: "War Thunder", price: "$29.99", img: "war thunder (1).jpg" },
+      { title: "Apex Legends", price: "$0.00", img: "image/icons8-derecha-30.png" },
+      { title: "Battlefield V", price: "$49.99", img: "image/icons8-derecha-30.png" },
+    ];
+
+    let currentIndex = 0;
+
+    function showGame(index) {
+      const game = games[index];
+      document.getElementById("catalogTitle").textContent = game.title;
+      document.getElementById("catalogPrice").textContent = "Precio: " + game.price;
+      document.getElementById("catalogImage").src = game.img;
+    }
+
+    function nextGame() {
+      currentIndex = (currentIndex + 1) % games.length;
+      showGame(currentIndex);
+    }
+
+    function prevGame() {
+      currentIndex = (currentIndex - 1 + games.length) % games.length;
+      showGame(currentIndex);
+    }
+  </script>
 </body>
+</html>
