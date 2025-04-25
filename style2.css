@@ -338,17 +338,6 @@ body {
   object-fit: cover; /* ajusta la imagen al contenedor sin deformarla */
 }
 
-/*sombras de los botones del carrucel*/
-.carousel-control-prev,
-.carousel-control-next {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-  background-color: rgba(0, 0, 0, 0.3); /* opcional, para resaltar más */
-  width: 60px;
-  height: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  border-radius: 25px;
-}
 
 /*carrucel 1*/
 .carrucel-1 {
@@ -361,3 +350,5 @@ body {
   height: 100%;
   object-fit: cover; /* ajusta la imagen al contenedor sin deformarla */
 }
+
+
