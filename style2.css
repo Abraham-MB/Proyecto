@@ -327,8 +327,15 @@ body {
 
 
 /*carrucel 2*/
-.carrucel-2{
-  margin: 20px;
+.carrucel-2 {
+  max-width: 900px;
+  height: 500px;
+  margin: auto; /* para centrarlo horizontalmente */
+}
+
+.carrucel-2 img {
+  height: 100%;
+  object-fit: cover; /* ajusta la imagen al contenedor sin deformarla */
 }
 
 /*sombras de los botones del carrucel*/
@@ -343,4 +350,14 @@ body {
   border-radius: 25px;
 }
 
+/*carrucel 1*/
+.carrucel-1 {
+  max-width: 900px;
+  height: 500px;
+  margin: auto; /* para centrarlo horizontalmente */
+}
 
+.carrucel-1 img {
+  height: 100%;
+  object-fit: cover; /* ajusta la imagen al contenedor sin deformarla */
+}
