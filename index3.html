@@ -1,159 +1,21 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="style3.css">
-  <title>Catálogo de Juegos</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  <title>Document</title>
 
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #121212;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 40px 20px;
-    }
-
-    .catalog-container {
-      width: 300px;
-      background-color: #1e2126;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
-      text-align: center;
-    }
-
-    .catalog-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .catalog-img:hover {
-      transform: scale(1.05);
-    }
-
-    .catalog-body {
-      padding: 15px;
-    }
-
-    .catalog-title {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-      color: yellowgreen;
-    }
-
-    .catalog-price {
-      margin-bottom: 15px;
-      color: #ccc;
-    }
-
-    .catalog-buttons button {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      margin-top: 10px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-
-    .btn-cart {
-      background-color: #9cce04;
-      color: #1e2126;
-    }
-
-    .btn-wishlist {
-      background-color: #3a3f48;
-      color: white;
-    }
-
-    .nav-controls {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 20px;
-    }
-
-    .nav-controls button {
-      background-color: transparent;
-      border: 2px solid yellowgreen;
-      color: yellowgreen;
-      padding: 10px;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .nav-controls button:hover {
-      background-color: yellowgreen;
-      color: #1e2126;
-    }
-  </style>
 </head>
 <body>
-  <div>
-    <div class="catalog-container" id="catalogCard">
-      <img src="war thunder (1).jpg" alt="Juego" class="catalog-img" id="catalogImage">
-      <div class="catalog-body">
-        <h3 class="catalog-title" id="catalogTitle">Call of Duty: Modern Warfare</h3>
-        <p class="catalog-price" id="catalogPrice">Precio: $39.99</p>
-        <div class="catalog-buttons">
-          <button class="btn-cart">Añadir al carrito</button>
-          <button class="btn-wishlist">Lista de deseos</button>
-        </div>
-      </div>
-    </div>
+  
+  <!--juego 1- catalogo 1-->
+  <h1 id="Fornite" >Fornite</h1>
+  <img id="Fornite" src="img2/Fortnite _ Xbox.jpg" alt="Fornite">
+  <p id="descripcion-juego"></p>
 
-  <div>
-    <div class="card tarjetas" style="width: 15rem;">
-      <a href="index3.html">
-        <img src="image/war thunder (1).jpg" class="card-img img-tar2" alt="...">
-      </a>
-    </div>
-    <div class="card tarjetas" style="width: 15rem;">
-      <a href="index3.html">
-        <img src="image/war thunder (1).jpg" class="card-img img-tar3" alt="...">
-      </a>
-    </div>
-  </div>
 
-  <script>
-    const games = [
-      { title: "Call of Duty: Modern Warfare", price: "$39.99", img: "war thunder (1).jpg" },
-      { title: "War Thunder", price: "$29.99", img: "war thunder (1).jpg" },
-      { title: "Apex Legends", price: "$0.00", img: "image/icons8-derecha-30.png" },
-      { title: "Battlefield V", price: "$49.99", img: "image/icons8-derecha-30.png" },
-    ];
-
-    let currentIndex = 0;
-
-    function showGame(index) {
-      const game = games[index];
-      document.getElementById("catalogTitle").textContent = game.title;
-      document.getElementById("catalogPrice").textContent = "Precio: " + game.price;
-      document.getElementById("catalogImage").src = game.img;
-    }
-
-    function nextGame() {
-      currentIndex = (currentIndex + 1) % games.length;
-      showGame(currentIndex);
-    }
-
-    function prevGame() {
-      currentIndex = (currentIndex - 1 + games.length) % games.length;
-      showGame(currentIndex);
-    }
-  </script>
+  <script src="java3.js"></script>
 </body>
 </html>
