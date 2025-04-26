@@ -3,22 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="image/logo.png">
   <link rel="icon" type="image/png" sizes="16x16" href="image/logo.png">
   <link rel="apple-touch-icon" sizes="180x180" href="image/logo.png">
   <link rel="manifest" href="image/logo.png">
-
+  
   <link rel="stylesheet" href="style3.css">
   <title>Bullets</title>
-
 </head>
 <body>
-
-  <h1 id="nombre-juego"></h1>
-  <img id="imagen-juego" src="" alt="Imagen del juego">
-  <p id="descripcion-juego">Cargando descripción...</p>
+  <div class="game-container">
+    <h1 id="nombre-juego"></h1>
+    
+    <!-- Slider principal -->
+    <div class="slider-container">
+      <div class="main-slider">
+        <div class="slide-wrapper" id="main-slide-wrapper">
+          <!-- El slide principal se llenará con JavaScript -->
+          <div class="slide active">
+            <img id="imagen-juego" src="" alt="Imagen del juego">
+          </div>
+        </div>
+        <!-- Controles del slider -->
+        <button class="slider-btn prev" id="prev-btn">&#10094;</button>
+        <button class="slider-btn next" id="next-btn">&#10095;</button>
+      </div>
+      
+      <!-- Miniaturas / Thumbnails -->
+      <div class="thumbnails" id="thumbnails">
+        <!-- Las miniaturas se generarán con JavaScript -->
+      </div>
+    </div>
+    
+    <!-- Información del juego -->
+    <div class="game-info">
+      <div class="game-description">
+        <p id="descripcion-juego">Cargando descripción...</p>
+      </div>
+      
+      <div class="game-details">
+        <div class="detail">
+          <span class="label">Desarrollador:</span>
+          <span id="desarrollador-juego">Cargando...</span>
+        </div>
+        <div class="detail">
+          <span class="label">Género:</span>
+          <span id="genero-juego">Cargando...</span>
+        </div>
+        <div class="detail">
+          <span class="label">Fecha de lanzamiento:</span>
+          <span id="fecha-juego">Cargando...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   <script src="java3.js"></script>
 </body>
-</html>
+</html>>
