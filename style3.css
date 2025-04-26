@@ -1,7 +1,7 @@
 /* Estilos generales */
 body {
   font-family: Arial, sans-serif;
-  background-color: #1b2838;
+  background-color: #121314;
   color: #fff;
   margin: 0;
   padding: 20px;
@@ -107,7 +107,7 @@ h1 {
 
 .thumbnail.active {
   opacity: 1;
-  border-color: #66c0f4;
+  border-color: #fdfdfd;
 }
 
 .thumbnail img {
@@ -118,7 +118,7 @@ h1 {
 
 /* Información del juego */
 .game-info {
-  background-color: #2a475e;
+  background-color: rgba(172, 255, 47, 0.185);
   border-radius: 5px;
   padding: 20px;
 }

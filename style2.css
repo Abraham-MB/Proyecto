@@ -385,4 +385,15 @@ body {
   object-fit: cover; /* ajusta la imagen al contenedor sin deformarla */
 }
 
-/*soporte*/
+/*footer*/
+::placeholder {
+  color: white !important;
+}
+
+.btn-enviar{
+  background-color: rgba(172, 255, 47, 0.185);
+}
+.btn-enviar :hover{
+  background-color: black;
+}
+
