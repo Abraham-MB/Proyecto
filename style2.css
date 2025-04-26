@@ -250,7 +250,11 @@ body {
 .tarjetas2{
   background-color: #202122;
   margin: 20px;
-  border-bottom: 2px solid greenyellow;
+  border-bottom: 2px solid #86895d;
+  border-top: 2px solid #86895d;
+  border-left: 2px solid #86895d;
+  border-right: 2px solid #86895d;
+
 }
 
 
@@ -260,7 +264,8 @@ body {
   height: 150px;
   width: 100%;
   object-fit: cover;
-  transition: transform 0,3s ease;
+  transition: transform -1s ease;
+  transform: translate(0, 7px);
 }
 .img-tar2:hover{
   transform: scale(1.05);
@@ -274,6 +279,8 @@ body {
   margin-left: auto;
   margin-right: auto;
   display: block;
+  background-color: #86895d;
+  margin: auto;
 }
 .btn-t2:hover{
   color: white;
@@ -370,6 +377,7 @@ body {
   max-width: 900px;
   height: 500px;
   margin: auto; /* para centrarlo horizontalmente */
+  
 }
 
 .carrucel-1 img {
