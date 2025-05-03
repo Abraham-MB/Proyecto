@@ -9,11 +9,52 @@
   <link rel="icon" type="image/png" sizes="16x16" href="image/logo.png">
   <link rel="apple-touch-icon" sizes="180x180" href="image/logo.png">
   <link rel="manifest" href="image/logo.png">
-  
+
+  <!-- Bootstrap CSS (solo necesitas uno, no dos versiones distintas) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+
   <link rel="stylesheet" href="style3.css">
   <title>Bullets</title>
 </head>
 <body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-black navbar-dark px-3">
+    <div class="container-fluid">
+      <!-- Parte izquierda -->
+      <div class="d-flex flex-column align-items-start">
+        <img src="image/logo-removebg-preview.png" class="logo-img me-2" style="width: 50px;">
+        <h1 class="mb-0 text-white h1">Bullets</h1>
+      </div>
+
+      <!-- Botón hamburguesa -->
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarOpciones">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menú colapsable -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarOpciones">
+        <ul class="navbar-nav">
+          <li>
+            <img src="img2/carrito de compras.png" id="cart-button" style="cursor:pointer; width: 40px; height: 40px;" alt="Carrito de compras">
+            <div id="cart-container" style="display:none; position:absolute; right: 10px; top: 60px; background-color: #202122; color: white; border: 1px solid #9cce04; border-radius: 5px; width: 300px; max-height: 400px; overflow-y: auto; z-index: 1000; padding: 10px;">
+              <h5>Carrito de Compras</h5>
+              <ul id="cart-items" style="list-style: none; padding-left: 0;"></ul>
+              <button id="close-cart" class="btn btn-sm btn-outline-light mt-2">Cerrar</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
   <div class="game-container">
     <h1 id="nombre-juego"></h1>
     
@@ -36,17 +77,16 @@
         <!-- Las miniaturas se generarán con JavaScript -->
       </div>
     </div>
+
+
+
     
     <!-- Información del juego -->
     <div class="game-info">
-      <div class="game-description">
-        <p id="descripcion-juego">Cargando descripción...</p>
-      </div>
-      
       <div class="game-details">
         <div class="detail">
           <span class="label">Desarrollador:</span>
-          <span id="desarrollador-juego">Cargando...</span>
+          <span id="desarrollador-juego">Cargando</span>
         </div>
         <div class="detail">
           <span class="label">Género:</span>
@@ -56,9 +96,177 @@
           <span class="label">Fecha de lanzamiento:</span>
           <span id="fecha-juego">Cargando...</span>
         </div>
+        <div class="game-description">
+          <p id="descripcion-juego">Cargando descripción...</p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Requisitos mín-max -->
+  <div class="requisitos-bloque">
+    <div class="detail re">
+      <span class="label">Requisitos mín-max</span>
+      <ul class="requisitos">
+        <li>SO: <span class="requisitos-span" id="req-os">Cargando.. - Cargando..</span></li>
+        <li>Procesador: <span class="requisitos-span" id="req-procesador">Cargando.. - Cargando..</span></li>
+        <li>Memoria: <span class="requisitos-span" id="req-memoria">Cargando.. - Cargando..</span></li>
+        <li>Gráficos: <span class="requisitos-span" id="req-graficos">Cargando.. - Cargando..</span></li>
+        <li>DirectX: <span class="requisitos-span" id="req-directx">Cargando.. - Cargando..</span></li>
+        <li>Red: <span class="requisitos-span" id="req-red">Cargando.. - Cargando..</span></li>
+        <li>Almacenamiento: <span class="requisitos-span" id="req-almacenamiento">Cargando.. - Cargando..</span></li>
+      </ul>
+    </div>
+
+    <!-- Imagen a la derecha de los requisitos -->
+    <div class="requisitos-img">
+      <img src="" alt="Ilustración" />
+    </div>
+  </div>
+
+  <div class="contenedor-boton">
+    <a href="index4.html">
+      <button class="btn-descargar">Descargar</button>
+    </a>
+  </div>
+  
+
+  <!-- SECCIÓN DE PUNTUACIONES Y COMENTARIOS -->
+<div class="reviews-container">
+  <h2 class="reviews-title">Reseñas de Usuarios</h2>
+  
+  <!-- Puntuación general -->
+  <div class="overall-rating">
+    <div class="rating-stars">
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-half"></i>
+    </div>
+    <div class="rating-number">4.5/5</div>
+    <div class="rating-count">(238 reseñas)</div>
+  </div>
+
+  <!-- Comentarios de usuarios -->
+  <div class="user-comments">
+    <!-- Comentario 1 -->
+    <div class="comment">
+      <div class="comment-header">
+        <img src="image/avatar1.png" alt="Avatar de usuario" class="user-avatar">
+        <div class="user-info">
+          <h4 class="user-name">Alex_Gamer</h4>
+          <div class="comment-rating">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star"></i>
+            <span class="date">15/04/2025</span>
+          </div>
+        </div>
+      </div>
+      <p class="comment-text">Increíble experiencia de juego, los gráficos son espectaculares y la jugabilidad es muy fluida. El único aspecto negativo es que algunas misiones son repetitivas, pero en general es uno de los mejores títulos que he jugado este año.</p>
+    </div>
+    
+    <!-- Comentario 2 -->
+    <div class="comment">
+      <div class="comment-header">
+        <img src="image/avatar2.png" alt="Avatar de usuario" class="user-avatar">
+        <div class="user-info">
+          <h4 class="user-name">Laura_83</h4>
+          <div class="comment-rating">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <span class="date">02/05/2025</span>
+          </div>
+        </div>
+      </div>
+      <p class="comment-text">Me ha encantado este juego desde el primer minuto. La historia es cautivadora y los personajes están muy bien desarrollados. El multijugador es divertido y la comunidad es muy activa. ¡Totalmente recomendado!</p>
+    </div>
+  </div>
+</div>
+
+  <!-- FOOTER -->
+<!-- FOOTER --> 
+<footer class="bg-dark text-light mt-5 py-4 border-top border-secondary" style="position: relative; overflow: hidden;">
+  <!-- Video de fondo -->
+  <video style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.3; z-index: 0;" autoplay muted loop>
+    <source src="img2/fuego.mp4" type="video/mp4">
+  </video>
+  
+  <!-- Contenido del footer con z-index para que aparezca encima del video -->
+  <div class="container " style="position: relative; z-index: 1;">
+    <div class="row">
+      <!-- Columna de logo y descripción -->
+      <div class="col-md-4 mb-4">
+        <h2 class="mb-3">Bullets</h2>
+        <h2 class="small" style="font-size: 17px;">Una plataforma para descubrir y comprar los mejores videojuegos del mercado.</h2>
+        <div class="d-flex gap-3 mt-3"> 
+          <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-discord"></i></a>
+        </div>
+      </div>
+      
+      <!-- Columna de enlaces rápidos -->
+      <div class="col-md-2 mb-4">
+        <h5 class="mb-3">Enlaces</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Catálogo</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Descuentos</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Novedades</a></li>
+        </ul>
+      </div>
+      
+      <!-- Columna de categorías -->
+      <div class="col-md-2 mb-4">
+        <h5 class="mb-3">Categorías</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Acción</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Estrategia</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Battle Royale</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Simulación</a></li>
+        </ul>
+      </div>
+      
+      <!-- Columna de soporte -->
+      <div class="col-md-4 mb-4">
+        <h4>Si deseas mandar un comentario o sugerencia, puedes mandarnos un mensaje :)</h4>
+        <div class="d-flex w-100 gap-2">
+          <input type="text soporte" class="form-control bg-dark text-light border-secondary " placeholder="Nombre">
+          <input type="email" class="form-control bg-dark text-light border-secondary " placeholder="Email">
+          <button class="btn btn-success btn-enviar" type="submit">Enviar</button>
+        </div>
+        <div class="mt-4">
+          <h5>Soporte</h5>
+          <h4 class="mb-1"><i class="bi bi-envelope me-2"></i>soporte@bullets.com</h4>
+          <h4><i class="bi bi-telephone me-2"></i>+34 123 456 789</h4>
+        </div>
+      </div>
+    </div>
+          
+    <!-- Fila inferior con derechos y políticas -->
+    <div class="row align-items-center">
+      <div class="col-md-6 text-center text-md-start">
+        <h4 class="mb-0">&copy; 2025 Bullets Gaming. Todos los derechos reservados.</h4>
+      </div>
+      <div class="col-md-6">
+        <ul class="nav justify-content-center justify-content-md-end">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Política de privacidad</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Términos de uso</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Cookies</a></li>
+        </ul>
       </div>
     </div>
   </div>
+</footer>
+
   
   <script src="java3.js"></script>
 </body>

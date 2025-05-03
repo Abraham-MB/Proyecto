@@ -1,15 +1,261 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasarela de Pago - Bullets</title>
+    
     <link rel="stylesheet" href="style4.css">
-    <title>Document</title>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-gamepad"></i> Bullets
+            </div>
+        </div>
+    </header>
 
-   
+    <div class="container">
+        <div class="checkout-container">
+            <div class="order-summary">
+                <h2>Resumen de tu compra</h2>
+                <div class="product-item">
+                    <div class="product-details">
+                        <div class="product-image">
+                            <i class="fas fa-fighter-jet"></i>
+                        </div>
+                        <div>
+                            <h3>Call of Duty: Modern Warfare III</h3>
+                            <p>Versión Digital Premium</p>
+                        </div>
+                    </div>
+                    <div class="product-price">€59.99</div>
+                </div>
+                <div class="product-item">
+                    <div class="product-details">
+                        <div class="product-image">
+                            <i class="fas fa-helicopter"></i>
+                        </div>
+                        <div>
+                            <h3>Battlefield 2042</h3>
+                            <p>Edición Estándar</p>
+                        </div>
+                    </div>
+                    <div class="product-price">€39.99</div>
+                </div>
 
+                <div class="total-section">
+                    <div class="total-row">
+                        <span>Subtotal:</span>
+                        <span>€99.98</span>
+                    </div>
+                    <div class="total-row">
+                        <span>IVA (21%):</span>
+                        <span>€21.00</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Envío:</span>
+                        <span>Gratis</span>
+                    </div>
+                    <hr>
+                    <div class="total-row" style="margin-top: 15px;">
+                        <span><strong>Total:</strong></span>
+                        <span class="total-amount">€120.98</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="payment-form">
+                <div class="ssl-badge">
+                    <i class="fas fa-lock"></i> Conexión segura SSL
+                </div>
+
+                <div class="timer">
+                    <i class="fas fa-clock"></i>
+                    <span>Tu reserva expira en <span id="timer">10:00</span></span>
+                </div>
+
+                <h2>Información de pago</h2>
+                
+                <div class="payment-methods">
+                    <div class="payment-method active" data-method="card">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    
+                </div>
+
+                <form id="payment-form">
+                    <div class="form-group">
+                        <label for="cardholder">Nombre del titular</label>
+                        <input type="text" id="cardholder" placeholder="Nombre como aparece en la tarjeta" required autocomplete="cc-name">
+                        <div class="error-message" id="cardholder-error">Por favor introduce un nombre válido</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" placeholder="ejemplo@correo.com" required autocomplete="email">
+                        <div class="error-message" id="email-error">Por favor introduce un correo válido</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="card-number">Número de tarjeta</label>
+                        <div class="card-inputs">
+                            <div class="card-number">
+                                <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required autocomplete="cc-number">
+                                <div class="error-message" id="card-number-error">Por favor introduce un número de tarjeta válido</div>
+                            </div>
+                            <div class="card-expiry">
+                                <input type="text" id="card-expiry" placeholder="MM/AA" maxlength="5" required autocomplete="cc-exp">
+                                <div class="error-message" id="expiry-error">Fecha inválida</div>
+                            </div>
+                            <div class="card-cvc">
+                                <input type="text" id="card-cvc" placeholder="CVC" maxlength="3" required autocomplete="cc-csc">
+                                <div class="error-message" id="cvc-error">CVC inválido</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="billing-address">Dirección de facturación</label>
+                        <input type="text" id="billing-address" placeholder="Calle, número" required autocomplete="address-line1">
+                        <div class="error-message" id="address-error">Por favor introduce una dirección válida</div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card-inputs">
+                            <div>
+                                <label for="city">Ciudad</label>
+                                <input type="text" id="city" placeholder="Ciudad" required autocomplete="address-level2">
+                                <div class="error-message" id="city-error">Por favor introduce una ciudad válida</div>
+                            </div>
+                            <div>
+                                <label for="postal-code">Código postal</label>
+                                <input type="text" id="postal-code" placeholder="28001" maxlength="5" required autocomplete="postal-code">
+                                <div class="error-message" id="postal-code-error">Código postal inválido</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">País</label>
+                        <select id="country" required autocomplete="country">
+                            <option value="">Selecciona un país</option>
+                            <option value="ES">España</option>
+                            <option value="MX">México</option>
+                            <option value="AR">Argentina</option>
+                            <option value="CO">Colombia</option>
+                            <option value="CL">Chile</option>
+                            <option value="PE">Perú</option>
+                            <option value="VE">Venezuela</option>
+                            <option value="EC">Ecuador</option>
+                            <option value="GT">Guatemala</option>
+                            <option value="CU">Cuba</option>
+                            <option value="BO">Bolivia</option>
+                            <option value="DO">República Dominicana</option>
+                            <option value="HN">Honduras</option>
+                            <option value="PY">Paraguay</option>
+                            <option value="SV">El Salvador</option>
+                            <option value="NI">Nicaragua</option>
+                            <option value="CR">Costa Rica</option>
+                            <option value="PA">Panamá</option>
+                            <option value="UY">Uruguay</option>
+                        </select>
+                        <div class="error-message" id="country-error">Por favor selecciona un país</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="terms" required>
+                            Acepto los <a href="#">términos y condiciones</a> y la <a href="#">política de privacidad</a>
+                        </label>
+                        <div class="error-message" id="terms-error">Debes aceptar los términos y condiciones</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="age-verification" required>
+                            Confirmo que soy mayor de 18 años para comprar videojuegos con clasificación PEGI 18+
+                        </label>
+                        <div class="error-message" id="age-error">Debes confirmar que eres mayor de 18 años</div>
+                    </div>
+
+                    <button type="submit" class="button" id="pay-button">
+                        <i class="fas fa-lock"></i> Pagar ahora €120.98
+                    </button>
+                </form>
+
+                <div class="security-badges">
+                    <div class="badge">
+                        <i class="fas fa-shield-alt"></i> Pago 100% Seguro
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-lock"></i> Datos Encriptados
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-user-shield"></i> Verificación 3D Secure
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para OTP / Verificación -->
+    <div class="modal" id="otp-modal">
+        <div class="modal-content otp-modal">
+            <span class="close-button" onclick="closeModal('otp-modal')">&times;</span>
+            <i class="fas fa-mobile-alt modal-icon"></i>
+            <h3 class="modal-title">Verificación de seguridad</h3>
+            <p class="modal-text">Hemos enviado un código de verificación a tu teléfono móvil registrado. Por favor, introdúcelo para completar la transacción.</p>
+            
+            <div class="otp-input-container">
+                <input type="text" class="otp-input" maxlength="1" id="otp-1">
+                <input type="text" class="otp-input" maxlength="1" id="otp-2">
+                <input type="text" class="otp-input" maxlength="1" id="otp-3">
+                <input type="text" class="otp-input" maxlength="1" id="otp-4">
+                <input type="text" class="otp-input" maxlength="1" id="otp-5">
+                <input type="text" class="otp-input" maxlength="1" id="otp-6">
+            </div>
+            
+            <p>No recibiste el código? <a href="#" id="resend-code">Reenviar código</a></p>
+            
+            <div class="modal-footer">
+                <button class="button" id="verify-otp">Verificar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Éxito -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content success-modal">
+            <i class="fas fa-check-circle modal-icon"></i>
+            <h3 class="modal-title">¡Pago Completado!</h3>
+            <p class="modal-text">Tu pago ha sido procesado correctamente. En breve recibirás un correo electrónico con los detalles de tu compra y los códigos de activación de tus juegos.</p>
+            <div class="modal-footer">
+                <button class="button" onclick="window.location.href='index.html'">Volver a la tienda</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Error -->
+    <div class="modal" id="error-modal">
+        <div class="modal-content error-modal">
+            <i class="fas fa-exclamation-circle modal-icon"></i>
+            <h3 class="modal-title">Error en el pago</h3>
+            <p class="modal-text" id="error-message">Ha ocurrido un error al procesar tu pago. Por favor, verifica los datos de tu tarjeta e inténtalo nuevamente.</p>
+            <div class="modal-footer">
+                <button class="button" onclick="closeModal('error-modal')">Intentar de nuevo</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BattleGames. Todos los derechos reservados.</p>
+            <p>Métodos de pago aceptados: Visa, MasterCard, American Express, PayPal, Apple Pay, Google Pay</p>
+        </div>
+    </footer>
+
+    <script src="java4.js"></script>
 </body>
 </html>
-

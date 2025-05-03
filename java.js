@@ -14,7 +14,8 @@ function mostrarLogin() {
 
 
 document.getElementById("login-form").addEventListener("submit", function(e) {
-    e.preventDefault(); // Evita que se envíe el formulario
-    // Aquí podrías validar el email/contraseña si quieres
-    window.location.href = "index2.html"; // Redirige a la tienda
+    e.preventDefault(); 
+
+    // validar el email o contraseña 
+    window.location.href = "index2.html"; 
 });

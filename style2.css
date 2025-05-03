@@ -3,16 +3,46 @@
   width: auto; /* Mantiene la proporción */
   transform: translate(-13px, 15px);
 }
-h1{
-  color: yellowgreen;
+p{
+  color: rgb(208, 208, 208);
   transform: translate(40px, -38px);
+  font-size: 125px;
+  font-family:'Times New Roman', Times, serif;
+  font-weight: 300;
 }
+
+h1{
+  position: relative;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 2em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  transform: translate(35px, -30px);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
+
 
 .div1{
   width: 70%;
 }
+
 .header {
-  background-color: #1e2126;
+  background-color: #000000;
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -34,6 +64,12 @@ h1{
 .brand {
   display: flex;
   flex-direction: column;
+}
+
+
+.navbar {
+  padding-top: -20rem;
+  padding-bottom: 0.1rem;
 }
 
 .nav {
@@ -83,10 +119,10 @@ h1{
 /*Buscador*/
 .search{
   height: 35px;
-  margin:0;
+  margin-top: 10px;
   background-color: rgba(0,0, 0, 0);
   color: rgb(0, 0, 0);
-  border-bottom: 0.1px solid rgb(14, 255, 6);
+  border-bottom: 0.1px solid black;
   border-top: 2px solid black;
   border-left: 2px solid black ;
   border-right: 2px solid black;
@@ -272,6 +308,7 @@ body {
   z-index: 1;
 }
 
+
 /*botones tarejtas 2*/
 .btn-t2{
   width: 100%;
@@ -305,7 +342,7 @@ body {
 }
 
 
-/*textos*/
+
 
 
 
@@ -352,7 +389,6 @@ body {
 /* Mantén los controles estándar para el primer carrusel */
 #carouselExampleRide .carousel-control-prev,
 #carouselExampleRide .carousel-control-next {
-  /* Puedes dejar esto vacío o añadir estilos mínimos que no interfieran */
   width: auto;
   height: auto;
   background-color: transparent;
@@ -374,9 +410,11 @@ body {
 
 /*carrucel 1*/
 .carrucel-1 {
-  max-width: 900px;
-  height: 500px;
+  width: 70%;
+  height: 100%;
   margin: auto; /* para centrarlo horizontalmente */
+  margin-top: 40px;
+  margin-bottom: 40px;
   
 }
 
@@ -384,6 +422,10 @@ body {
   height: 100%;
   object-fit: cover; /* ajusta la imagen al contenedor sin deformarla */
 }
+
+
+
+
 
 /*footer*/
 ::placeholder {
@@ -397,3 +439,14 @@ body {
   background-color: black;
 }
 
+
+/*catalogo de la parte inicial*/
+.btn-catalogo{
+  background: #000000;
+}
+.dropdown-menu {
+  background-color: #000000;
+}
+.dropdown-item{
+  color: white;
+}
