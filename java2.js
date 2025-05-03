@@ -189,4 +189,101 @@ document.addEventListener('DOMContentLoaded', () => {
   closeCartButton.addEventListener('click', () => {
     cartContainer.style.display = 'none';
   });
+
+  // New code to handle catalog dropdown clicks and show modal with games
+  const categoryModal = new bootstrap.Modal(document.getElementById('categoryModal'));
+  const categoryModalLabel = document.getElementById('categoryModalLabel');
+  const categoryModalBody = document.getElementById('categoryModalBody');
+
+  const gamesByCategory = {
+    shooters: [
+      'Fortnite',
+      'Call of Duty Warzone',
+      'PUBG Battlegrounds',
+      'Battlefield 1',
+      'Counter Strike 2',
+      'Battlefield 2042',
+      'Call of Duty WWII',
+      'Valorant'
+    ],
+    strategy: [
+      'Company of Heroes',
+      'Halo Wars 2',
+      'Enlisted (combines FPS with strategic squad management)'
+    ],
+    military: [
+      'Arma III',
+      'Hell Let Loose',
+      'Insurgency Sandstorm',
+      'DCS World',
+      'Zero Hour',
+      'Squad'
+    ]
+  };
+
+  function populateModal(category) {
+    categoryModalLabel.textContent = `Juegos - ${category.charAt(0).toUpperCase() + category.slice(1)}`;
+    categoryModalBody.innerHTML = '';
+
+    const list = document.createElement('ul');
+    list.style.listStyle = 'none';
+    list.style.paddingLeft = '0';
+
+    gamesByCategory[category].forEach(gameName => {
+      const li = document.createElement('li');
+      li.style.marginBottom = '10px';
+
+      // Find game details from games array to get image and id for link
+      const game = games.find(g => g.name.toLowerCase() === gameName.toLowerCase() || g.name.includes(gameName));
+      if (game) {
+        const link = document.createElement('a');
+        link.href = `index3.html?id=${game.id}`;
+        link.style.color = '#9cce04';
+        link.style.textDecoration = 'none';
+        link.style.display = 'flex';
+        link.style.alignItems = 'center';
+        link.style.gap = '10px';
+
+        const img = document.createElement('img');
+        img.src = game.img;
+        img.alt = game.name;
+        img.style.width = '60px';
+        img.style.height = '40px';
+        img.style.objectFit = 'cover';
+        img.style.borderRadius = '5px';
+
+        const span = document.createElement('span');
+        span.textContent = game.name;
+
+        link.appendChild(img);
+        link.appendChild(span);
+        li.appendChild(link);
+      } else {
+        li.textContent = gameName;
+      }
+
+      list.appendChild(li);
+    });
+
+    categoryModalBody.appendChild(list);
+  }
+
+  document.getElementById('category-shooters').addEventListener('click', (e) => {
+    e.preventDefault();
+    populateModal('shooters');
+    categoryModal.show();
+  });
+
+  document.getElementById('category-strategy').addEventListener('click', (e) => {
+    e.preventDefault();
+    populateModal('strategy');
+    categoryModal.show();
+  });
+
+  document.getElementById('category-military').addEventListener('click', (e) => {
+    e.preventDefault();
+    populateModal('military');
+    categoryModal.show();
+  });
+
 });

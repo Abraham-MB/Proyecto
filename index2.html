@@ -59,11 +59,26 @@
             <button class="btn btn-secondary dropdown-toggle btn-catalogo" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Catalogo
             </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">shooters</a></li>
-              <li><a class="dropdown-item" href="#">....</a></li>
-              <li><a class="dropdown-item" href="#">Simulacion militar</a></li>
+          <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#" id="category-shooters">shooters</a></li>
+              <li><a class="dropdown-item" href="#" id="category-strategy">Strategy Games</a></li>
+              <li><a class="dropdown-item" href="#" id="category-military">Simulacion militar</a></li>
             </ul>
+
+<!-- Modal for displaying games by category -->
+<div class="modal fade" id="categoryModal" tabindex="-1" aria-labelledby="categoryModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="categoryModalLabel">Juegos</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="categoryModalBody" style="max-height: 60vh; overflow-y: auto;">
+        <!-- Games list will be populated here -->
+      </div>
+    </div>
+  </div>
+</div>
           </div>
         </ul>
         <form class="d-flex position-relative" role="search" autocomplete="off">
@@ -365,23 +380,5 @@
 
 
 <script src="java2.js"></script>
-
-  <!-- Modal for filtered games -->
-  <div class="modal fade" id="categoryModal" tabindex="-1" aria-labelledby="categoryModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-md modal-dialog-centered">
-      <div class="modal-content bg-dark text-light">
-        <div class="modal-header">
-          <h5 class="modal-title" id="categoryModalLabel">Juegos filtrados</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-        <div class="modal-body">
-          <div id="filteredGamesContainer" class="d-flex flex-wrap justify-content-center gap-3">
-            <!-- Filtered games will be rendered here -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
 </body>
 </html>
