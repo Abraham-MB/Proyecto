@@ -40,9 +40,17 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarOpciones">
         <ul class="navbar-nav">
           <li>
-            <img src="img2/carrito de compras.png" id="cart-button" style="cursor:pointer; width: 40px; height: 40px;" alt="Carrito de compras">
+            <img class="img-car-lis" src="img2/carrito de compras.png" id="cart-button" style="cursor:pointer; width: 40px; height: 40px;" alt="Carrito de compras">
             <div id="cart-container" style="display:none; position:absolute; right: 10px; top: 60px; background-color: #202122; color: white; border: 1px solid #9cce04; border-radius: 5px; width: 300px; max-height: 400px; overflow-y: auto; z-index: 1000; padding: 10px;">
               <h5>Carrito de Compras</h5>
+              <ul id="cart-items" style="list-style: none; padding-left: 0;"></ul>
+              <button id="close-cart" class="btn btn-sm btn-outline-light mt-2">Cerrar</button>
+            </div>
+          </li>
+          <li>
+            <img class="img-car-lis" src="img2/icons8-lista-de-deseos-64.png" id="cart-button" style="cursor:pointer; width: 40px; height: 40px;" alt="lista de deseos">
+            <div id="cart-container" style="display:none; position:absolute; ">
+              <h5>Lista de deseos</h5>
               <ul id="cart-items" style="list-style: none; padding-left: 0;"></ul>
               <button id="close-cart" class="btn btn-sm btn-outline-light mt-2">Cerrar</button>
             </div>
@@ -52,9 +60,9 @@
               Catalogo
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="#">shooters</a></li>
+              <li><a class="dropdown-item" href="#">....</a></li>
+              <li><a class="dropdown-item" href="#">Simulacion militar</a></li>
             </ul>
           </div>
         </ul>
@@ -94,7 +102,7 @@
   <div id="carouselExampleRide" class="carousel slide carrucel-1 mx-auto" data-bs-ride="true">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <a href="index3.html?id=Fortnite">
+        <a href="index3.html?id=Fornite">
           <img id="Fortnite" src="img2/FORTNITE.jpg" class="d-block w-100" alt="...">
         </a>
       </div>
@@ -187,7 +195,7 @@
     </a>
     <div class="card-body">
       <h4 class="card-title">DCS World</h4>
-      <h5 class="card-text">Gratuito</h5>
+      <h5 class="card-text">S/ 140.00</h5>
       <button href="#" class="btn btn-cart btn-t2">Añadir al carrito</button>
     </div>
   </div>
@@ -198,7 +206,7 @@
     </a>
     <div class="card-body">
       <h4 class="card-title">Enlisted</h4>
-      <h5 class="card-text">Gratuito</h5>
+      <h5 class="card-text">S/50.00</h5>
       <button href="#" class="btn btn-cart btn-t2">Añadir al carrito</button>
       
     </div>

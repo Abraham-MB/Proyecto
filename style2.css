@@ -114,7 +114,10 @@ h1{
 }
 
 
-
+/*clase del carrito de compras y de la lista de deseos*/
+.img-car-lis{
+  margin-right: 10px;
+}
 
 /*Buscador*/
 .search{

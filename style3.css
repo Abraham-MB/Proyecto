@@ -271,12 +271,47 @@ ul.requisitos {
 
 
 
-/*boton de descargar*/
+/*boton para agregar al carrito*/
 .contenedor-boton {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+/*boton para comprar*/
+.contenedor-boton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.boton-precio {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* espacio entre botón y precio */
+}
+
+.btn-comprar {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.precio {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 17px;
+  font-weight: bold;
+  color: #fffafa;
+  background-color: #28a745;
+  margin-left: -30px;
+  border-radius: 5px;
+}
+
 
 .btn-descargar {
   padding: 12px 24px;
