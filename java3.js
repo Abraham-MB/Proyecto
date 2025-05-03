@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Obtener el ID del juego de la URL
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
+
+    
     
     // catalogo de todos los juegos
     const juegos = {
@@ -12,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         nombre: "Fortnite",
         descripcion: 
         "Juego de disparos multijugador gratuito en tercera persona que combina construcción rápida, estilo visual caricaturesco y modos de juego como Battle Royale o creativos, en constante actualización con eventos y colaboraciones.",
+        precio:29.99,
         imagen: "img2/EPIC GAMES.jpg",
         //imagenes del slider
         screenshots: [
