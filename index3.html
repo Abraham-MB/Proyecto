@@ -36,20 +36,6 @@
       <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarOpciones">
         <span class="navbar-toggler-icon"></span>
       </button>
-
-      <!-- Menú colapsable -->
-      <div class="collapse navbar-collapse justify-content-end" id="navbarOpciones">
-        <ul class="navbar-nav">
-          <li>
-            <img src="img2/carrito de compras.png" id="cart-button" style="cursor:pointer; width: 40px; height: 40px;" alt="Carrito de compras">
-            <div id="cart-container" style="display:none; position:absolute; right: 10px; top: 60px; background-color: #202122; color: white; border: 1px solid #9cce04; border-radius: 5px; width: 300px; max-height: 400px; overflow-y: auto; z-index: 1000; padding: 10px;">
-              <h5>Carrito de Compras</h5>
-              <ul id="cart-items" style="list-style: none; padding-left: 0;"></ul>
-              <button id="close-cart" class="btn btn-sm btn-outline-light mt-2">Cerrar</button>
-            </div>
-          </li>
-        </ul>
-      </div>
     </div>
   </nav>
 
@@ -77,9 +63,6 @@
       </div>
     </div>
 
-
-
-    
     <!-- Información del juego -->
     <div class="game-info">
       <div class="game-details">
@@ -130,79 +113,68 @@
   
   <div class="contenedor-boton">
     <div class="boton-precio">
-      <a href="index4.html">
+      <a id="comprar-link" href="index4.html">
         <button class="btn-comprar">comprar</button>
       </a>
-      <span class="precio" id="precio-juego">$29.00</span>
+      <span class="precio" id="precio-juego">$0.00</span>
     </div>
   </div>
 
-
-
-  
-
-
-
-  
-
-  <!-- SECCIÓN DE PUNTUACIONES Y COMENTARIOS -->
-<div class="reviews-container">
-  <h2 class="reviews-title">Reseñas de Usuarios</h2>
-  
-  <!-- Puntuación general -->
-  <div class="overall-rating">
-    <div class="rating-stars">
-      <i class="bi bi-star-fill"></i>
-      <i class="bi bi-star-fill"></i>
-      <i class="bi bi-star-fill"></i>
-      <i class="bi bi-star-fill"></i>
-      <i class="bi bi-star-half"></i>
-    </div>
-    <div class="rating-number">4.5/5</div>
-    <div class="rating-count">(238 reseñas)</div>
-  </div>
-
-  <!-- Comentarios de usuarios -->
-  <div class="user-comments">
-    <!-- Comentario 1 -->
-    <div class="comment">
-      <div class="comment-header">
-        <img src="image/avatar1.png" alt="Avatar de usuario" class="user-avatar">
-        <div class="user-info">
-          <h4 class="user-name">Alex_Gamer</h4>
-          <div class="comment-rating">
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star"></i>
-            <span class="date">15/04/2025</span>
-          </div>
-        </div>
-      </div>
-      <p class="comment-text">Increíble experiencia de juego, los gráficos son espectaculares y la jugabilidad es muy fluida. El único aspecto negativo es que algunas misiones son repetitivas, pero en general es uno de los mejores títulos que he jugado este año.</p>
-    </div>
+  <script>
     
-    <!-- Comentario 2 -->
-    <div class="comment">
-      <div class="comment-header">
-        <img src="image/avatar2.png" alt="Avatar de usuario" class="user-avatar">
-        <div class="user-info">
-          <h4 class="user-name">Laura_83</h4>
-          <div class="comment-rating">
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <span class="date">02/05/2025</span>
-          </div>
+    document.addEventListener('DOMContentLoaded', function() {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+      if (id) {
+        const comprarLink = document.getElementById('comprar-link');
+        if (comprarLink) {
+          comprarLink.href = `index4.html?id=${encodeURIComponent(id)}`;
+        }
+      }
+    });
+  </script>
+
+
+  <!-- COMENTARIOS Y CALIFICACIÓN -->
+<div class="container my-5" id="comentarios-section">
+  <h2 class="mb-4 text-white">Opiniones de jugadores</h2>
+
+  <!-- Formulario de comentario -->
+  <div class="card bg-dark text-light border-secondary mb-4">
+    <div class="card-body">
+      <h5 class="card-title">Deja tu comentario</h5>
+      <div class="mb-3">
+        <input type="text" id="nombre-comentario" class="form-control bg-dark text-light border-secondary" placeholder="Tu nombre">
+      </div>
+      <div class="mb-3">
+        <textarea id="texto-comentario" class="form-control bg-dark text-light border-secondary" placeholder="Escribe tu opinión..." rows="3"></textarea>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Calificación:</label>
+        <div id="estrellas">
+          <!-- Estrellas interactivas -->
+          <i class="bi bi-star-fill estrella" data-valor="1"></i>
+          <i class="bi bi-star estrella" data-valor="2"></i>
+          <i class="bi bi-star estrella" data-valor="3"></i>
+          <i class="bi bi-star estrella" data-valor="4"></i>
+          <i class="bi bi-star estrella" data-valor="5"></i>
         </div>
       </div>
-      <p class="comment-text">Me ha encantado este juego desde el primer minuto. La historia es cautivadora y los personajes están muy bien desarrollados. El multijugador es divertido y la comunidad es muy activa. ¡Totalmente recomendado!</p>
+      <button class="btn btn-outline-success" id="btn-enviar-comentario">Publicar comentario</button>
     </div>
+  </div>
+
+  <!-- Lista de comentarios -->
+  <div class="comentarios-lista text-light">
+    <h4 class="mb-3">Comentarios recientes</h4>
+    <div id="lista-comentarios"></div>
   </div>
 </div>
+
+
+
+
+
 
   <!-- FOOTER -->
 <!-- FOOTER --> 

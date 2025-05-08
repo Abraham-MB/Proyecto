@@ -4,8 +4,32 @@ document.addEventListener('DOMContentLoaded', function() {
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
 
-    
-    
+    // Map URL id to juegos keys to handle case and spelling differences
+    const idMap = {
+      'fortnite': 'Fornite',
+      'fornite': 'Fornite',
+      'callofdutywarzone': 'CallofDutyWarzone',
+      'pubg': 'pubg',
+      'battlefield1': 'Battlefield1',
+      'counterstrike2': 'counterstrike2',
+      'arma3': 'ArmaIII',
+      'hellletloose': 'HellLetLoose',
+      'insurgencysandstorm': 'Insurgency',
+      'battlefield2042': 'Battlefield2042',
+      'companyofheroes': 'CompanyofHeroes',
+      'dcsworld': 'DCS',
+      'enlisted': 'Enlisted',
+      'callofdutywwii': 'CallofDutyWWII',
+      'zerohour': 'ZeroHour',
+      'squad': 'Squad',
+      'valorant': 'Valorant',
+      'halowars2': 'HaloWars2'
+    };
+
+    // Normalize id from URL to lowercase and remove spaces
+    const normalizedId = id ? id.toLowerCase().replace(/\s+/g, '') : null;
+    const juegoKey = normalizedId && idMap[normalizedId] ? idMap[normalizedId] : null;
+
     // catalogo de todos los juegos
     const juegos = {
 
@@ -51,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
       CallofDutyWarzone: {
         nombre: "Call of Duty Warzone",
         descripcion: "FPS Battle Royale gratuito que enfrenta a hasta 150 jugadores en un gran mapa con mecánicas rápidas, armamento moderno y acción intensa, ambientado en el universo de Call of Duty.",
+        precio:15.00,
         imagen: "img-desarrolladores/INFINITY WARD.jpg",
         imagen: "img-desarrolladores/INFINITY WARD.jpg",
         screenshots: [
@@ -85,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
       pubg: {
         nombre: "Pubg Battlegrounds",
         descripcion: "Pionero del género Battle Royale, este juego enfrenta a jugadores en combates tácticos donde sobreviven explorando mapas extensos, saqueando equipamiento y combatiendo hasta quedar un solo ganador.",
+        precio: 2.99,
         imagen: "img-desarrolladores/PUBG X KRAFTON.avif",
         screenshots: [
           "img-detalle/pubg-1.jpg",
@@ -118,6 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
       Battlefield1: {
         nombre: "Battlefield 1",
         descripcion: "FPS ambientado en la Primera Guerra Mundial que ofrece grandes batallas multijugador con vehículos, destructibilidad de escenarios y narrativa histórica intensa.",
+        precio:120.00,
         imagen: "img-desarrolladores/DICE.jpg",
         screenshots: [
           "img2/BATTLEFIELD 1.jpg",
@@ -152,6 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
       counterstrike2: {
         nombre: "Counter Strike 2",
         descripcion: "FPS táctico competitivo centrado en partidas 5 vs 5, donde equipos de terroristas y antiterroristas se enfrentan en rondas rápidas con mecánicas de precisión y economía de armamento.",
+        precio:20.00,
         imagen: "img-desarrolladores/VALVE CORPORATION.jpg",
         screenshots: [
           "img2/counter strike 2.jpg",
@@ -186,6 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
       ArmaIII: {
         nombre: "Arma III",
         descripcion: "Simulador militar sandbox con un enfoque en el realismo de combate, logística y misiones cooperativas en mapas abiertos y detallados, ideal para jugadores que buscan una experiencia táctica profunda.",
+        precio:50.00,
         imagen: "img-desarrolladores/Bohemia Interactive.jpg",
         screenshots: [
           "img-detalle/Arma3-1.jpg",
@@ -219,6 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
       HellLetLoose: {
         nombre: "Hell Let Loose",
         descripcion: "FPS militar realista ambientado en la Segunda Guerra Mundial, donde más de 100 jugadores se enfrentan en batallas históricas con roles específicos, comunicación jerárquica y línea de suministro.",
+        precio:30.00,
         imagen: "img-desarrolladores/COVER 6 STUDIOS.png",
         screenshots: [
           "img-detalle/HLL-1.jpg",
@@ -257,6 +287,7 @@ document.addEventListener('DOMContentLoaded', function() {
       Insurgency: {
         nombre: "Insurgency Sandstorm",
         descripcion: "FPS táctico en entornos de combate modernos con enfoque realista, sin HUD, con comunicación por voz direccional, fuego amigo activado y misiones cooperativas o PvP intensas.",
+        precio:40.00,
         imagen: "img-desarrolladores/New-World-Interactive.png",
         screenshots: [
           "img-detalle/IS-1.jpg",
@@ -290,6 +321,7 @@ document.addEventListener('DOMContentLoaded', function() {
       Battlefield2042: {
         nombre: "Battlefield 2042",
         descripcion: "Shooter en primera persona ambientado en un futuro cercano, con grandes mapas dinámicos, eventos climáticos extremos y multijugador masivo con clases personalizables.",
+        precio:100.00,
         imagen: "img-desarrolladores/DICE.jpg",
         screenshots: [
           "img-detalle/b-2042-1.jpg",
@@ -323,6 +355,7 @@ document.addEventListener('DOMContentLoaded', function() {
       CompanyofHeroes: {
         nombre: "Company of Heroes",
         descripcion: "uego de estrategia en tiempo real ambientado en la Segunda Guerra Mundial, donde debes comandar tropas, capturar territorios y usar tácticas dinámicas para dominar el campo de batalla.",
+        precio:20.00,
         imagen: "img-desarrolladores/Relic Entertainment.jpg",
         screenshots: [
           "img-detalle/coh3-1.jpg",
@@ -356,6 +389,7 @@ document.addEventListener('DOMContentLoaded', function() {
       DCS: {
         nombre: "DCS World",
         descripcion: "Simulador de vuelo militar ultrarrealista que permite pilotar cazas, helicópteros y jets históricos o modernos en misiones auténticas, con controles detallados y físicas de vuelo precisas.",
+        precio:200.00,
         imagen: "img-desarrolladores/Eagle Dynamics.png",
         screenshots: [
           "img-detalle/DCS-1.jpg",
@@ -389,6 +423,7 @@ document.addEventListener('DOMContentLoaded', function() {
       Enlisted: {
         nombre: "Enlisted",
         descripcion: "Shooter de escuadrones ambientado en la Segunda Guerra Mundial, donde controlas a un pelotón de soldados con armamento auténtico, y alternas entre tierra, aire y roles de apoyo táctico.",
+        precio:10.00,
         imagen: "img-desarrolladores/Darkflow Software.png",
         screenshots: [
           "img-detalle/Enlisted-1.jpg",
@@ -422,6 +457,7 @@ document.addEventListener('DOMContentLoaded', function() {
       CallofDutyWWII: {
         nombre: "Call of Duty WWII",
         descripcion: "Shooter en primera persona ambientado en la Segunda Guerra Mundial, con un enfoque arcade y cinematográfico, que revive batallas emblemáticas y ofrece campañas y multijugador intensos.",
+        precio:50.00,
         imagen: "img-desarrolladores/Sledgehammer Games.jpg",
         screenshots: [
           "img-detalle/cod-wwii-1.jpg",
@@ -460,6 +496,7 @@ document.addEventListener('DOMContentLoaded', function() {
       ZeroHour: {
         nombre: "Zero Hour",
         descripcion: "FPS táctico centrado en operaciones especiales tipo SWAT, donde la comunicación, el uso de herramientas y la planificación son clave para asaltos realistas en entornos urbanos cerrados.",
+        precio:40.00,
         imagen: "img-desarrolladores/M7.jpg",
         screenshots: [
           "img-detalle/zero hour-1.jpg",
@@ -493,6 +530,7 @@ document.addEventListener('DOMContentLoaded', function() {
       Squad: {
         nombre: "Squad",
         descripcion: "FPS militar en equipo con énfasis en la comunicación y cooperación entre escuadras, grandes mapas, combate realista y simulación de logística y estrategia bélica moderna.",
+        precio:25.00,
         imagen: "img-desarrolladores/Offworld Industries.jpg",
         screenshots: [
           "img-detalle/squad-1.jpg",
@@ -532,6 +570,7 @@ document.addEventListener('DOMContentLoaded', function() {
       Valorant: {
         nombre: "Valorant",
         descripcion: "FPS competitivo por rondas que mezcla precisión táctica con habilidades únicas de personajes (agentes), enfocado en partidas 5 vs 5, desarrollado para eSports y jugabilidad estratégica.",
+        precio:0.00,
         imagen: "img-desarrolladores/RIOT GAMES.jpg",
         screenshots: [
           "img-detalle/Valorant-1.jpg",
@@ -565,6 +604,7 @@ document.addEventListener('DOMContentLoaded', function() {
       HaloWars2: {
         nombre: "Halo Wars 2",
         descripcion: "RTS de ciencia ficción dentro del universo Halo, en el que lideras fuerzas humanas o alienígenas en combates tácticos con héroes, habilidades especiales y estructuras estratégicas.",
+        precio:25.00,
         imagen: "img-desarrolladores/CREATIVE ASSEMBLY.jpg",
         screenshots: [
           "img-detalle/Halow2-1.jpg",
@@ -601,10 +641,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Obtener información del juego seleccionado
     const juego = juegos[id];
     
-    if (juego) {
+      if (juego) {
       // Cargar datos del juego en la página
       document.getElementById('nombre-juego').textContent = juego.nombre;
       document.getElementById('descripcion-juego').textContent = juego.descripcion;
+
+      // Update the price span with the game's price formatted as currency
+      const precioElemento = document.getElementById('precio-juego');
+      if (precioElemento && juego.precio !== undefined) {
+        precioElemento.textContent = `$${juego.precio.toFixed(2)}`;
+      }
       
       // Si existen estos elementos en el HTML, asignarles valores
       if (document.getElementById('desarrollador-juego')) {
@@ -736,3 +782,94 @@ document.addEventListener('DOMContentLoaded', function() {
       currentIndex = index;
     }
   }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+
+  let calificacionSeleccionada = 0;
+
+  document.querySelectorAll('.estrella').forEach(estrella => {
+    estrella.addEventListener('click', function () {
+      calificacionSeleccionada = parseInt(this.dataset.valor);
+      actualizarEstrellas();
+    });
+  });
+
+  function actualizarEstrellas() {
+    document.querySelectorAll('.estrella').forEach(estrella => {
+      const valor = parseInt(estrella.dataset.valor);
+      estrella.classList.remove('bi-star-fill', 'bi-star');
+      estrella.classList.add(valor <= calificacionSeleccionada ? 'bi-star-fill' : 'bi-star');
+    });
+  }
+
+  // Function to load comments for the current game from localStorage
+  function cargarComentarios(id) {
+    const comentariosGuardados = localStorage.getItem('comentarios_' + id);
+    if (comentariosGuardados) {
+      const comentarios = JSON.parse(comentariosGuardados);
+      const listaComentarios = document.getElementById('lista-comentarios');
+      listaComentarios.innerHTML = '';
+      comentarios.forEach(comentario => {
+        const comentarioHTML = `
+          <div class="border-top border-secondary pt-3 mt-3">
+            <strong>${comentario.nombre}</strong> - ${'★'.repeat(comentario.calificacion)}${'☆'.repeat(5 - comentario.calificacion)}
+            <p>${comentario.texto}</p>
+          </div>
+        `;
+        listaComentarios.innerHTML += comentarioHTML;
+      });
+    }
+  }
+
+  // Function to save a comment for the current game in localStorage
+  function guardarComentario(id, nombre, texto, calificacion) {
+    const comentariosGuardados = localStorage.getItem('comentarios_' + id);
+    let comentarios = comentariosGuardados ? JSON.parse(comentariosGuardados) : [];
+    comentarios.push({ nombre, texto, calificacion });
+    localStorage.setItem('comentarios_' + id, JSON.stringify(comentarios));
+  }
+
+  document.getElementById('btn-enviar-comentario').addEventListener('click', () => {
+    const nombre = document.getElementById('nombre-comentario').value;
+    const texto = document.getElementById('texto-comentario').value;
+
+    if (nombre && texto && calificacionSeleccionada > 0) {
+      // Save comment for the current game
+      guardarComentario(id, nombre, texto, calificacionSeleccionada);
+
+      // Reload comments to update the list
+      cargarComentarios(id);
+
+      // Limpiar
+      document.getElementById('nombre-comentario').value = '';
+      document.getElementById('texto-comentario').value = '';
+      calificacionSeleccionada = 0;
+      actualizarEstrellas();
+    } else {
+      alert('Completa todos los campos y selecciona una calificación.');
+    }
+  });
+
+  // Load comments when the page loads for the current game
+  if (id) {
+    cargarComentarios(id);
+  }
+
+  // Agregar al carrito
+  const addToCartBtn = document.querySelector('.btn-descargar');
+  if (addToCartBtn && id && juegos[id]) {
+    addToCartBtn.addEventListener('click', () => {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const gameName = juegos[id].nombre;
+      if (!cart.includes(gameName)) {
+        cart.push(gameName);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`${gameName} ha sido agregado al carrito.`);
+      } else {
+        alert(`${gameName} ya está en el carrito.`);
+      }
+    });
+  }
+});
